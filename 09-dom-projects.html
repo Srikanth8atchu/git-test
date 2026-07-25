@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DOM - Projects</title>
+  </head>
+  <body>
+
+    <p>Youtube Subscribe Button</p>
+    <button onclick="
+      subscribe();
+    " class="js-subscribe-button" >
+        Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>              
+    <!-- Void Element -->
+    <!--      <input placeholder="Cost of Order" class="js-cost-input">                 -->
+    <!--  onkeydown=""  -- this is look for a key pressed from keyboard  -->
+
+    <!--
+      clicks, keydown => events
+      onClick, onkeydown => event listners
+
+      EVENT LISTNERS
+      ---------------------------------------------
+      onclick        =    click
+      onkeydown      =    key press
+      onscroll       =    scrolling
+      onmouseenter   =    hovering over
+      onmouseleave   =    stop hovering over
+      and many more
+    -->
+    
+    <input placeholder="Cost of Order" class="js-cost-input" onkeydown="
+      handleCosKeyDown(event);
+    ">               
+    
+    <button onclick="
+      calculateTotal();
+    ">Calculate</button>
+
+    <p class="js-total-cost"></p>
+
+    <script>
+
+      function handleCosKeyDown(event) {
+        //console.log('typing');
+
+        //console.log(event.key);         // Every event listner gets an event object
+        if(event.key === 'Enter'){
+          calculateTotal();
+        }
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector('.js-cost-input');
+        //  let cost= inputElement.value;          // this is always a string a INPUT value
+                                                   // whenever we get a value from DOM, the va;ue will be string   
+        let cost = Number(inputElement.value);
+        // console.log(cost);
+        // console.log(typeof cost);
+
+        if(cost<40){
+          cost += 10;                         // type Coercion(automatic type conversion) - add differnt data types and makes it string
+          // console.log(cost);
+        } //else {
+        //   cost = 
+        // }
+
+        document.querySelector('.js-total-cost')
+          .innerHTML = `$${cost}`;
+      }
+
+      function subscribe() {
+        const buttonElement = document.querySelector('.js-subscribe-button');
+
+        // if(buttonElement.innerHTML === 'Subscribe'){
+        //   buttonElement.innerHTML = 'Subscribed';
+        // } else {
+        //   buttonElement.innerHTML = 'Subscribe';
+        // }
+
+        if(buttonElement.innerText === 'Subscribe'){      // innerText exclued the spaces
+          buttonElement.innerHTML = 'Subscribed';
+        } else {
+          buttonElement.innerHTML = 'Subscribe';
+        }
+      }
+
+
+    </script>
+  </body>
+</html>

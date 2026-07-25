@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+      <title>Advanced Functions</title>
+  </head>
+  <body>
+
+    <button onclick="
+      
+    ">Click</button>
+
+    <script>
+
+
+// Hoisting - doen't matter funtion is created after calling a function
+// this doen't work when saved in a variable
+      greeting();
+      function greeting () {
+        console.log('hello');
+      }
+      greeting();
+
+     const num = 2;
+     
+     const funcVariable = function greeting() {
+      console.log('hello2');
+     } 
+
+     console.log(funcVariable);
+     console.log(typeof funcVariable);
+     funcVariable();
+
+     // annonymus function - function without name
+     const funVar = function() {
+        console.log('hello3');
+     }
+     funVar();
+
+     // passing a function into another function - Callback Function
+     function run(param) {
+        param();
+     }
+
+     run(function() {
+      console.log('hello4');
+     });
+
+    // setTimeout takes 2 parameters fucntion which needs to be run, how long should it wait
+
+    // a number in milliseconds 1000 milliseconds = 1 second
+    setTimeout(function( ) {
+      console.log('timeout');
+    }, 3000);
+
+
+    // Asynchronous Code -- won't wait for a line to finish before going to the next line.
+    console.log('next line');
+
+
+
+    //Synchronous code -- will wait for the one line to finish before going to the next line.
+
+    // All the JS code is Synchronous code, except the setTimeout function.
+
+    let tesinterval = setInterval(function(){
+      console.log('interval');
+    }, 3000);                    // keeps runction the function every 3 seconds
+
+    //auto runs even added to a variable
+
+     console.log('next line2');
+
+     clearInterval(tesinterval);
+
+    //  [
+    //   'make dinner',
+    //   'wash dishes',
+    //   'watch youtube'
+    //  ]
+
+     // Loop thorugh an array
+     // For each - .foreach()
+
+     [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+     ].forEach(function (value, index) {
+
+        if (value === 'wash dishes') {
+          return;                       // same as continue, since contiue doesn't work in forEach
+                                        // break is not a option, use regular loop
+        }
+
+        console.log(value, index);
+     });
+
+
+
+     // Arrow Functions
+     // Similar to regular function
+
+     const arrowFunction = (param) => {
+      console.log('hello');
+      console.log(param);
+      return 5;
+     };
+     
+     arrowFunction('Sri');
+     arrowFunction(10);
+
+     console.log(arrowFunction(100));
+
+     const oneParam = param => {              // brackets are optional
+      console.log(param + 1);
+     };
+
+     oneParam(2);
+
+     const oneLine = () => 2 + 3;
+     oneLine();
+
+     console.log(oneLine());
+
+     [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+     ].forEach((value, index) => {
+
+        if (value === 'wash dishes') {
+          return;                       // same as continue, since contiue doesn't work in forEach
+                                        // break is not a option, use regular loop
+        }
+
+        console.log(value, index);
+     });
+
+
+     const Object2 = {
+      method: () => {
+
+      },
+      method() {            // recommended in objects
+
+      }
+     } 
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+      <title>Booleans</title>
+  </head>
+  <body>
+    <script>
+      console.log(typeof 'true');
+      console.log(typeof false);
+
+      console.log(3 > 5);
+
+      console.log(5 == '5');      // value comparision
+      console.log(5 == '5.00');   // value comparision
+      console.log(5 === '5');     // value comparision + data type comparision
+
+      if (true) {
+        console.log('If Statement Check True condition');
+      }
+
+      if (false) {
+        console.log('If Statement Check False condition');
+      } else {
+        console.log('else check');
+      }
+
+
+
+      if (30 >= 18) {
+        console.log('You can drive');
+      } else {
+        console.log('You can not drive');
+      }
+
+      
+      if (15 >= 18) {
+        console.log('You can drive');
+      } else {
+        console.log('You can not drive');
+      }
+
+      const age = 15;
+
+      if (age >= 16) {
+        console.log('You can drive');
+      } else if(age >= 14) {
+        console.log('Almost there!');
+      } else {
+        console.log('You can not drive');
+      }
+
+
+      console.log(true && true);
+
+      console.log(true && false);
+
+      console.log(true || false);
+      
+      console.log(0.2 >= 0 && 0.2 < 1/3)
+
+      console.log(1/3)
+
+      console.log(!true);
+
+
+
+      if (5) {
+        console.log('truthy');
+      }
+      // Not below Thruthy values
+      // Falsy Value
+      // false 0 '' NaN undefined null
+      if (0) {
+        console.log('truthy');
+      }
+      
+      console.log(!0);
+
+      console.log('text' / 5); // NaN
+
+      let val1;
+      console.log(val1); // undefined - which doesn't have value
+
+      const val2 = undefined;
+      console.log(val2);
+
+
+      // Ternaney Operator ?:
+      
+      true ? 'truthy' : 'falsy' // short hand for if else statement
+
+      const result = true ? 'truthy' : 'falsy'
+      console.log(result);
+
+      const result1 = 0 ? 'truthy' : 'falsy'
+      console.log(result1);
+
+      // Guard Operator &&
+      // Short - Circuit Evalution
+      // Stops early, doen't run code for right when flase && value2
+
+      false && console.log('hello');
+
+      const message = false && 'hello';
+      console.log(message);
+
+      
+      const message1 = 5 && 'hello'; // if (condition) {message='hello'}
+      console.log(message1);
+
+      // Default Operator ||
+      // Checks atleast one true condition left true skips right one
+
+      const currency = 'INR' || 'USD';
+      console.log(currency);
+
+      
+      const currency1= undefined || 'USD'; // if (!condition) {message='hello'}
+      console.log(currency1);
+
+    </script>
+  </body>
+</html>

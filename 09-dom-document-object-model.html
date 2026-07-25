@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM - Document Object Model</title>
+  </head>
+  <body>
+
+    <button>DOM</button>
+
+    <button class="js-button">DOM 2</button>
+
+    <script>
+      // DOM manipulation examples
+      // DOM = another built-in object called as "Documnet Object"
+
+      //    console.log(document);
+
+      //  document.body.innerHTML = 'hello'; // replaces the contains in body tag with hello
+
+      //  document.title = 'DOM Via Script';
+
+      // Document object represents/models the webpage.
+      // Documnet object means it has access to web page.
+      // Can chage the content of web page as well.
+
+      /*
+      console.log(document.title);    
+      
+      document.title = 'DOM via JavaScript'   // Changes the Title
+      console.log(document.title);
+
+      console.log(document.body);
+
+      // We can have HTML elements inside JavaScript
+      // The DOM combines JavaScript and HTML together, which gives JavaScript the contol of web page.
+
+      console.log(typeof document.body);
+
+      console.log(document.body.innerHTML);
+
+      document.body.innerHTML = 'DOM via JavaScript';
+
+      document.body.innerHTML = '<button>DOM Button Via JavaScript</button>';
+
+      */
+      //  document.querySelector() - lets us get any element from the page and put it inside JavaScript
+
+      console.log(document.querySelector('body'));  // gets first body/button
+      
+      console.log(document.querySelector('button'));  // gets first body/button
+
+      // every HTML elements has a property .innerHTML
+
+      console.log(document.querySelector('button').innerHTML);
+
+      document.querySelector('button')
+        .innerHTML = 'JS Changed';
+
+      // to get another button, we can get it by using class attribute which adds a lable for identification.
+      // to access via class use .(dot) and name to ientify
+
+      console.log( document.querySelector('.js-button'));
+      
+      const buttonElement = document.querySelector('.js-button');
+      console.log(buttonElement);
+
+
+      // document Object - Webpage
+      // 
+      // Window Object - the entire browser includes documnet, console.....
+
+      console.log(window);
+      console.log(window.document);
+            console.log(window.console);
+
+
+      // Window is built in object, which JavaScript will automatically adds window to the documnet attribute 
+
+
+    </script>
+  </body>
+</html>

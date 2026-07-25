@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+      <title>Objects</title>
+  </head>
+  <body>
+    <script>
+      // objects group multiple values together
+
+      const product = {     // property-value pair
+        name: 'Socks',
+        price: 1090
+      };
+
+      console.log(typeof product);
+
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      product.name = 'cotton socks';
+
+      console.log(product);
+
+      console.log(product.atm); // undefined
+
+      product.newProperty = 'true'; // add new value
+      console.log(product);
+
+      delete product.newProperty; // delete property
+      console.log(product);
+      
+      
+
+      const product2 = {
+        name: 'shirt',
+        ['delivery-time']: '1 day',
+        'delivery-date': 'Today',
+        rating: {
+          stars: 4.5,
+          count: 87
+        },
+        fun: function funtion1() {                    //method
+          console.log('Function Inside object');
+        },
+        fun1: function function1 () {
+          return product2.rating.stars + product2.rating.count          
+        }
+      }
+
+      console.log(product2);
+
+      console.log(product2['name']);
+
+      //console.log(product2.deliver-time);
+
+      console.log(product2['delivery-time']);
+
+      console.log(product2['name' + 'delivery-time']);
+
+      console.log(product2['delivery-date']);
+
+      console.log(product2.rating);
+      console.log(product2['rating']);
+      console.log(product2['rating']['count']);
+
+      console.log(product2.fun);      
+      console.log(product2.fun());
+
+
+      console.log(product2.fun1);      
+      console.log(product2.fun1());
+
+      console.log(typeof console);
+      console.log(typeof console.log);
+      
+      console.log(typeof console.log());
+
+      JSON.stringify(product2);
+      console.log(JSON.stringify(product2))
+      console.log(typeof JSON.stringify(product2))
+
+      const product3 = {
+        name: 'shirt',
+        ['delivery-time']: '1 day',
+        'delivery-date': 'Today',
+        rating: {
+          stars: 4.5,
+          count: 87
+        },
+        fun: function funtion1() {                    //method
+          console.log('Function Inside object');
+        },
+        fun1: functionreturn => product2.rating.stars + product2.rating.count          
+      }
+
+      console.log(JSON.stringify(product3));
+
+      const jsonString = JSON.stringify(product2)
+
+      console.log(JSON.parse(jsonString));
+
+      
+      // if we refresh/close the page, all the variables are deleted.
+      // LocalStorage - Saves values more permenantly, that is present to that page
+      // LocalStorage only supports Strings
+
+      // localStorage.setItem('score', JSON.stringify(score));
+      // let score = JSON.parse(localStorage.getItem('score'))
+      // localStorage.removeItem('score');
+
+
+      console.log('hello'.length); // auto-boxing - auto assigning strings as objects
+      console.log('hello'.toUpperCase());
+
+
+      const object1 = {
+        message: 'hello'
+      };
+
+      const object2 = object1;    // doesn't copy data, insted it reference object memory
+
+      object2.message = 'world';      // even though const is used, we can change inside the object
+
+      console.log(object1.message);
+      console.log(object2.message);
+
+      const object3 = {
+        message: 'world'
+      }
+
+
+      console.log(object3 === object2); // objects uses different refernces no two objects are equal until shares same reference
+
+      console.log(object2 === object1);
+
+      console.log(object3.message === object1.message)
+
+      //const message = object3.message;
+
+      const object4 = {
+        message: 'world',
+        price: 799
+      }
+
+      const {message} = object4;      // Destructuring
+      console.log(message);
+
+      const {message1, price} = object4;
+      console.log(message,price);
+
+      const object5 = {
+        message: message
+      }
+
+      console.log(object5);
+
+      const object6 ={
+        message,
+        // method: function function1() {
+        //   console.log('method');
+        // }
+        method(){
+          console.log('method');
+        }
+      }
+
+      console.log(object6);
+
+      object6.method();
+
+
+
+
+
+    </script>
+  </body>
+</html>
